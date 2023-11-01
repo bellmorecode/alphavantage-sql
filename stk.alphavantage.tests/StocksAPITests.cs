@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Diagnostics;
 
 namespace stk.alphavantage.tests
@@ -7,30 +6,22 @@ namespace stk.alphavantage.tests
     [TestClass]
     public class StocksAPITests
     {
+        readonly string ticker_symbol = "AMD";
+
         [TestMethod]
         public void GetQuote_Test()
         {
-            Trace.TraceInformation("Start Test");
-
-            var result = StocksAPI.GetQuote("IBM");
+            var result = StocksAPI.GetQuote(ticker_symbol);
             Assert.IsNotNull(result);
-
-            Trace.TraceWarning(result);
-
-            Trace.TraceInformation("Test Finished");
+            Trace.TraceInformation(result);
         }
 
         [TestMethod]
         public void GetIntradaySeries_Test()
         {
-            Trace.TraceInformation("Start Test");
-
-            var result = StocksAPI.GetIntradaySeries("IBM");
+            var result = StocksAPI.GetIntradaySeries(ticker_symbol);
             Assert.IsNotNull(result);
-
-            Trace.TraceWarning(result);
-
-            Trace.TraceInformation("Test Finished");
+            Trace.TraceInformation(result);
         }
     }
 }

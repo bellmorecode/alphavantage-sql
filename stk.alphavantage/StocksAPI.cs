@@ -2,13 +2,11 @@ using Microsoft.SqlServer.Server;
 using System;
 using System.IO;
 using System.Net;
-using System.Net.Cache;
 
 namespace stk.alphavantage
 {
     public static class StocksAPI
     {
-
         static int api_pos = 0;
         static string[] api_keys = new[] { "KDU2A8QDR8AD6KC5", "0VVZDI4MNL1Y3771", "3OK5PJT6LA9K2EX7" };
         // TODO: replace the strings above with your keys, can use more than 1.
